@@ -8,7 +8,7 @@ create table `room` (
     `id` int primary key auto_increment,
     `type` varchar(255),     -- 自习室类型
     `address` varchar(255),  -- 地址，如A103表示A楼1层03室
-    `enable` bool,           -- 自习室可用状态
+    `available` bool,        -- 自习室可用状态
     `open_start_time` time,  -- 一天中的开放时间
     `open_end_time` time     -- 一天中的结束时间
 );
@@ -23,7 +23,7 @@ create table `room` (
 create table `seat` (
     `id` int primary key auto_increment,
     `rid` int not null,  -- refer to room.id
-    `enable` bool,       -- 座位可用状态
+    `occupied` bool,     -- 座位可用状态
     `type` tinyint,      -- 座位所在桌共有几个座位
     `charge` bool        -- 座位旁是否能充电
 );
