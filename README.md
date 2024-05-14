@@ -6,6 +6,7 @@
 -- 自习室 entity
 create table `room` (
     `id` int primary key auto_increment,
+    `type` varchar(255),     -- 自习室类型
     `address` varchar(255),  -- 地址，如A103表示A楼1层03室
     `enable` bool,           -- 自习室可用状态
     `open_start_time` time,  -- 一天中的开放时间
@@ -56,6 +57,8 @@ create table `record` (
     `uid` int not null,       -- refer to user.id
     `sid` int not null,       -- refer to seat.id
     `reserve_time` datetime,  -- 预约成功的时间
+    `register` boolean,       -- 是否签到
+    `register_time` datetime  -- 签到时间
     `start_time` datetime,    -- 本次预约的开始时间
     `end_time` datetime       -- 本次预约的结束时间
 );
