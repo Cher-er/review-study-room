@@ -23,10 +23,7 @@ create table `room` (
 create table `seat` (
     `id` int primary key auto_increment,
     `rid` int not null,  -- refer to room.id
-<<<<<<< HEAD
-=======
     `occupied` bool,     -- 座位可用状态
->>>>>>> ee65d5ec788e8178d94351f3b71a40b50e1890fa
     `type` tinyint,      -- 座位所在桌共有几个座位
     `charge` bool        -- 座位旁是否能充电
 );
