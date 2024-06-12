@@ -55,12 +55,12 @@ create table `user` (
 create table `record` (
     `id` int primary key auto_increment,
     `uid` int not null,       -- refer to user.id
+    `rid` int not null,       -- refer to room.id
     `sid` int not null,       -- refer to seat.id
     `reserve_time` datetime,  -- 预约成功的时间
-    `register` boolean,       -- 是否签到
-    `register_time` datetime  -- 签到时间
     `start_time` datetime,    -- 本次预约的开始时间
-    `end_time` datetime       -- 本次预约的结束时间
+    `end_time` datetime,      -- 本次预约的结束时间
+    `attendance` int          -- 是否签到
 );
 ```
 
